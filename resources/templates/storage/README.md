@@ -6,6 +6,6 @@ This directory contains a Bicep template `storage.bicep` that can be used to dep
 
 ### Deploy a standard GPv2 storage account
 
-```bash
+```console
 az deployment group create -g <RG_NAME> -f storage.bicep
 ```
