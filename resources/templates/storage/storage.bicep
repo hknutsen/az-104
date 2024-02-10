@@ -1,3 +1,5 @@
+// Required configuration
+
 param name string = 'storage${uniqueString(resourceGroup().id)}'
 
 param location string = resourceGroup().location
@@ -10,6 +12,8 @@ param tier string = 'Standard'
 
 @allowed(['LRS', 'ZRS', 'GRS', 'RAGRS', 'GZRS', 'RAGZRS'])
 param replication string = 'LRS'
+
+// Optional configuration
 
 param tags object = {}
 
