@@ -134,3 +134,7 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2023-09-01' = {
   }
   tags: tags
 }
+
+output privateIPAddress string = networkInterface.properties.ipConfigurations[0].properties.privateIPAddress
+
+output publicIPAddress string = publicIPAddress.properties.ipAddress
