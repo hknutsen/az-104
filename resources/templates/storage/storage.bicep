@@ -1,5 +1,7 @@
 // Required configuration
 
+@minLength(3)
+@maxLength(24)
 param name string = 'storage${uniqueString(resourceGroup().id)}'
 
 param location string = resourceGroup().location
