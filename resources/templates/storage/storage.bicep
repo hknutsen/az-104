@@ -1,5 +1,3 @@
-// Required configuration
-
 @minLength(3)
 @maxLength(24)
 param storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'
@@ -14,8 +12,6 @@ param tier string = 'Standard'
 
 @allowed(['LRS', 'ZRS', 'GRS', 'RAGRS', 'GZRS', 'RAGZRS'])
 param replication string = 'LRS'
-
-// Optional configuration
 
 @allowed(['Hot', 'Cool']) // Archive tier cannot be configured at storage account level
 param accessTier string = 'Hot'
