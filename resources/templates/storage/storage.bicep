@@ -2,7 +2,7 @@
 
 @minLength(3)
 @maxLength(24)
-param name string = 'storage${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'
 
 param location string = resourceGroup().location
 
@@ -17,15 +17,20 @@ param replication string = 'LRS'
 
 // Optional configuration
 
+@allowed(['Hot', 'Cool']) // Archive tier cannot be configured at storage account level
+param accessTier string = 'Hot'
+
 param tags object = {}
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
-  name: name
+  name: storageAccountName
   location: location
   kind: kind
   sku: {
     name: '${tier}_${replication}'
   }
-  properties: {}
+  properties: {
+    accessTier: accessTier
+  }
   tags: tags
 }
