@@ -8,7 +8,7 @@ param kind string = 'StorageV2'
 @allowed(['Standard', 'Premium'])
 param tier string = 'Standard'
 
-@allowed(['LRS', 'ZRS', 'GRS'])
+@allowed(['LRS', 'ZRS', 'GRS', 'RAGRS', 'GZRS', 'RAGZRS'])
 param replication string = 'LRS'
 
 param tags object = {}
