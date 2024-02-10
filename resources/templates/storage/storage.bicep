@@ -34,3 +34,13 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   }
   tags: tags
 }
+
+output storageAccountId string = storageAccount.id
+
+output blobServiceEndpoint string = storageAccount.properties.primaryEndpoints.blob
+
+output fileServiceEndpoint string = storageAccount.properties.primaryEndpoints.file
+
+output queueServiceEndpoint string = storageAccount.properties.primaryEndpoints.queue
+
+output tableServiceEndpoint string = storageAccount.properties.primaryEndpoints.table
