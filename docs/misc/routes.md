@@ -11,7 +11,7 @@ The following routes are configured for `subnet1`. The objective is to route all
 
 ## User-defined routes
 
-| Source | Address prefixes | Next hop type | IP |
+| Source | Address prefixes | Next hop type | IP address |
 | --- | --- | --- | --- |
 | User | 10.11.0.0/16 | Virutal appliance | 10.10.1.12 |
 
