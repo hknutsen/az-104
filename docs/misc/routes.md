@@ -1,13 +1,15 @@
 # Routes example
 
-Consider a virtual network `vnet1` containing a subnet `snet1`:
+Consider a virtual network `vnet1`:
 
 - `vnet1` address space: `10.10.0.0/16`.
-- `snet1` address prefix: `10.10.1.0/24`.
-- Route table `rt1` is attached to `snet1`.
-- Network virtual appliance (NVA) `vm1` IP address: `10.10.1.12`.
-- `vnet1` peered with virtual network `vnet2`.
-- `vnet2` with address space `10.11.0.0/16`.
+- `vnet1` contains a subnet `subnet1`.
+- `subnet1` address prefix: `10.10.1.0/24`.
+- `subnet1` contains a network virtual appliance (NVA) `vm1`.
+- `vm1` IP address: `10.10.1.12`.
+- `subnet1` is associated with a route table `rt1`.
+- `vnet1` is peered with a virtual network `vnet2`.
+- `vnet2` address space: `10.11.0.0/16`.
 
 The following routes are configured for `rt1`. The objective is to route all traffic to `vnet2` through `vm1`.
 
